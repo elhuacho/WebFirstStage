@@ -5,33 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FirstStage | Registro Usuario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../assets/css/registro.css">
-    <script type="text/javascript">
-        $(document).ready(function(){
-            // Activate tooltip
-            $('[data-toggle="tooltip"]').tooltip();
-            
-            // Select/Deselect checkboxes
-            var checkbox = $('table tbody input[type="checkbox"]');
-            $("#selectAll").click(function(){
-                if(this.checked){
-                    checkbox.each(function(){
-                        this.checked = true;                        
-                    });
-                } else{
-                    checkbox.each(function(){
-                        this.checked = false;                        
-                    });
-                } 
-            });
-            checkbox.click(function(){
-                if(!this.checked){
-                    $("#selectAll").prop("checked", false);
-                }
-            });
-        });
+    <link rel="stylesheet" href="assets/css/registro.css">
+	<script>
+        function registrar() {
+            window.location.href = "lista.html";
+        }
     </script>
 </head>
 <body>
@@ -72,9 +52,10 @@
                 <div class="form-group">
                     <label for="clave">Password:</label>
                     <input type="password" class="form-control" id="clave">
-
-                  <div class="form-group">
-                    <label for="gvideo">Genero de Videojuegos Favorito</label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gvideo">Género de Videojuegos Favorito</label>
                 </div>
 
                 <div class="checkbox1">
@@ -91,7 +72,7 @@
                  </div>
                   
                  <div class="form-group"> 
-                    <label for="FSCon" class="control-label">¿Como te enteraste de la existencia de FirstStage?</label>
+                    <label for="FSCon" class="control-label">¿Cómo te enteraste de la existencia de FirstStage?</label>
                     <select class="form-control" id="FSCon">
                         <option value="BG">Blogs</option>
                         <option value="FR">Foros</option>
@@ -102,9 +83,8 @@
 
                 <div class="form-group">
                     <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+                        <button type="submit" class="btn btn-primary btn-lg" onclick="registrar();">Registrar</button>
                     </div>
-
               </form>
 
 

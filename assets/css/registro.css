@@ -5,6 +5,6 @@ body {
     background-size: 100%;
 }
 
-h1 {
+h1, label {
     color: white;
 }
