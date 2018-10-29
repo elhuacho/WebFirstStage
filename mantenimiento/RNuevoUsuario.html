@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FirstStage | Registro Usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../assets/css/registro.css">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Activate tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+            
+            // Select/Deselect checkboxes
+            var checkbox = $('table tbody input[type="checkbox"]');
+            $("#selectAll").click(function(){
+                if(this.checked){
+                    checkbox.each(function(){
+                        this.checked = true;                        
+                    });
+                } else{
+                    checkbox.each(function(){
+                        this.checked = false;                        
+                    });
+                } 
+            });
+            checkbox.click(function(){
+                if(!this.checked){
+                    $("#selectAll").prop("checked", false);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="py-5 text-center">
+            <h1>Registro de Usuario</h1>
+        </div>
+       
+            <form role="form">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="nombre" class="form-control" id="nombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="apellidos" class="form-control" id="apellidos">
+                  </div>
+
+                  <div class="form-group"> 
+                    <label for="pais" class="control-label">Pais</label>
+                    <select class="form-control" id="pais">
+                        <option value="PE">PERU</option>
+                        <option value="CH">CHILE</option>
+                        <option value="BR">BRASIL</option>
+                        <option value="CL">COLOMBIA</option>
+                        <option value="VN">VENEZUELA</option>
+                        <option value="AR">ARGENTINA</option>
+                        <option value="BO">BOLIVIA</option>
+                    </select>                    
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="clave">Password:</label>
+                    <input type="password" class="form-control" id="clave">
+
+                  <div class="form-group">
+                    <label for="gvideo">Genero de Videojuegos Favorito</label>
+                </div>
+
+                <div class="checkbox1">
+                    <label><input type="checkbox">Pelea</label>
+                </div>
+                <div class="checkbox2">
+                      <label><input type="checkbox">Deporte</label>
+                </div>
+                <div class="checkbox3">
+                      <label><input type="checkbox">RPG</label>
+                </div>
+                <div class="checkbox4">
+                        <label><input type="checkbox">FPS</label>
+                 </div>
+                  
+                 <div class="form-group"> 
+                    <label for="FSCon" class="control-label">¿Como te enteraste de la existencia de FirstStage?</label>
+                    <select class="form-control" id="FSCon">
+                        <option value="BG">Blogs</option>
+                        <option value="FR">Foros</option>
+                        <option value="AM">Por un amigo</option>
+                        <option value="DC">De casualidad</option>
+                    </select>                    
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+                    </div>
+
+              </form>
+
+
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="../.dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
