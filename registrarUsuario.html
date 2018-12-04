@@ -5,14 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FirstStage | Registro Usuario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon-firststage.jpg" />
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="assets/css/registro.css">
-	<script>
-        function registrar() {
-            window.location.href = "lista.html";
-        }
-    </script>
 </head>
 <body>
     <div class="container">
@@ -20,83 +16,76 @@
             <h1>Registro de Usuario</h1>
         </div>
        
-            <form role="form" action="lista.html" method="post">
+            <form role="form" action="lista.html">
                 <div class="form-group">
-                  <label for="nombre">Nombres</label>
-                  <input type="nombre" class="form-control" id="nombre">
+                  <label for="nombres">Nombres</label>
+                  <input type="nombre" class="form-control" id="nombres" placeholder="Ingrese nombre(s)">
                 </div>
 
                 <div class="form-group">
                     <label for="apellidos">Apellidos</label>
-                    <input type="apellidos" class="form-control" id="apellidos">
+                    <input type="apellidos" class="form-control" id="apellidos" placeholder="Ingrese apellido(s)">
                   </div>
 
                   <div class="form-group"> 
                     <label for="pais" class="control-label">Pais</label>
                     <select class="form-control" id="pais">
-                        <option value="PE">PERU</option>
-                        <option value="CH">CHILE</option>
-                        <option value="BR">BRASIL</option>
-                        <option value="CL">COLOMBIA</option>
-                        <option value="VN">VENEZUELA</option>
-                        <option value="AR">ARGENTINA</option>
-                        <option value="BO">BOLIVIA</option>
+                        <option value="PERU">PERU</option>
+                        <option value="CHILE">CHILE</option>
+                        <option value="BRASIL">BRASIL</option>
+                        <option value="COLOMBIA">COLOMBIA</option>
+                        <option value="VENEZUELA">VENEZUELA</option>
+                        <option value="ARGENTINA">ARGENTINA</option>
+                        <option value="BOLIVIA">BOLIVIA</option>
                     </select>                    
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" required>
+                    <input type="email" class="form-control" id="email" placeholder="Ingrese un email" required>
                 </div>
 
                 <div class="form-group">
                     <label>Usuario</label>
-                    <input type="text" class="form-control" required>
+                    <input type="text" class="form-control" id="usuario" placeholder="Ingrese un usuario" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="clave">Password</label>
-                    <input type="password" class="form-control" id="clave" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="gvideo">Género de Videojuegos Favorito</label>
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Ingrese un password" required>
                 </div>
 
-                <div class="checkbox1">
-                    <label><input type="checkbox">Pelea</label>
+                <div class="form-group">
+                    <label for="medio" class="control-label">Género de Videojuegos Favorito</label>
+                    <select class="form-control" id="genero">
+                        <option value="Pelea">Pelea</option>
+                        <option value="Deporte">Deporte</option>
+                        <option value="RPG">RPG</option>
+                        <option value="FPS">FPS</option>
+                    </select>
                 </div>
-                <div class="checkbox2">
-                      <label><input type="checkbox">Deporte</label>
-                </div>
-                <div class="checkbox3">
-                      <label><input type="checkbox">RPG</label>
-                </div>
-                <div class="checkbox4">
-                        <label><input type="checkbox">FPS</label>
-                 </div>
-                  
+
                  <div class="form-group"> 
-                    <label for="FSCon" class="control-label">¿Cómo te enteraste de la existencia de FirstStage?</label>
-                    <select class="form-control" id="FSCon">
-                        <option value="BG">Blogs</option>
-                        <option value="FR">Foros</option>
-                        <option value="AM">Por un amigo</option>
-                        <option value="DC">De casualidad</option>
+                    <label for="medio" class="control-label">¿Cómo te enteraste de la existencia de FirstStage?</label>
+                    <select class="form-control" id="medio">
+                        <option value="Blogs">Blogs</option>
+                        <option value="Foros">Foros</option>
+                        <option value="Por un amigo">Por un amigo</option>
+                        <option value="De casualidad">De casualidad</option>
                     </select>                    
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+                        <button type="submit" id="btnRegistrar" class="btn btn-primary btn-lg">Registrar</button>
                     </div>
+                </div>
               </form>
-
-
         </div>
 
     <script src="assets/js/jquery-3.3.1.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
     <script src="dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/registrar.js"></script>
 </body>
 </html>

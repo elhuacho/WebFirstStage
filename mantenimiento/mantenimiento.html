@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FirstStage | Mantenimiento</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icon-firststage.jpg" />
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../assets/css/mantenimiento.css">
@@ -58,104 +59,8 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                <label for="checkbox1"></label>
-                            </span>
-                        </td>
-                        <td>1</td>
-                        <td>Left 4 Dead</td>
-                        <td>Valve</td>
-                        <td>18 de noviembre de 2008</td>
-                        <td>
-                            <a href="#editVideogameModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">edit</i></a>
-                            <a href="#deleteVideogameModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">delete</i></a>
-                        </td>  
-                    </tr>
-                    <!--Contenido de ejemplo-->
-                    <tr>
-                        <td>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="checkbox2" name="options[]" value="1">
-                                <label for="checkbox2"></label>
-                            </span>
-                        </td>
-                        <td>2</td>
-                        <td>Left 4 Dead</td>
-                        <td>Valve</td>
-                        <td>18 de noviembre de 2008</td>
-                        <td>
-                            <a href="#editVideogameModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">edit</i></a>
-                            <a href="#deleteVideogameModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">delete</i></a>    
-                        </td>  
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="checkbox3" name="options[]" value="1">
-                                <label for="checkbox3"></label>
-                            </span>
-                        </td>
-                        <td>3</td>
-                        <td>Left 4 Dead</td>
-                        <td>Valve</td>
-                        <td>18 de noviembre de 2008</td>
-                        <td>
-                            <a href="#editVideogameModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">edit</i></a>
-                            <a href="#deleteVideogameModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">delete</i></a>    
-                        </td>  
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="checkbox4" name="options[]" value="1">
-                                <label for="checkbox4"></label>
-                            </span>
-                        </td>
-                        <td>4</td>
-                        <td>Left 4 Dead</td>
-                        <td>Valve</td>
-                        <td>18 de noviembre de 2008</td>
-                        <td>
-                            <a href="#editVideogameModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">edit</i></a>
-                            <a href="#deleteVideogameModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">delete</i></a>
-                        </td>  
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="checkbox5" name="options[]" value="1">
-                                <label for="checkbox5"></label>
-                            </span>
-                        </td>
-                        <td>5</td>
-                        <td>Left 4 Dead</td>
-                        <td>Valve</td>
-                        <td>18 de noviembre de 2008</td>
-                        <td>
-                            <a href="#editVideogameModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">edit</i></a>
-                            <a href="#deleteVideogameModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">delete</i></a>
-                        </td>  
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="checkbox6" name="options[]" value="1">
-                                <label for="checkbox6"></label>
-                            </span>
-                        </td>
-                        <td>6</td>
-                        <td>Left 4 Dead</td>
-                        <td>Valve</td>
-                        <td>18 de noviembre de 2008</td>
-                        <td>
-                            <a href="#editVideogameModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">edit</i></a>
-                            <a href="#deleteVideogameModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">delete</i></a>    
-                        </td>  
-                    </tr>
+                <tbody id="videojuegos">
+                    <!-- AJAX GET GAMES -->
                 </tbody>
             </table>
             <div class="clearfix">
@@ -175,7 +80,7 @@
 	<div id="addVideogameModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="" method="post">
+                    <form action="mantenimiento.html" >
                         <div class="modal-header">						
                             <h4 class="modal-title">Agregar videojuego</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -183,20 +88,36 @@
                         <div class="modal-body">					
                             <div class="form-group">
                                 <label>Nombre de videojuego</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" id="nombre" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Creador</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" id="creador" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Fecha de lanzamiento</label>
-                                <input type="date" class="form-control" required>
-                            </div>					
+                                <input type="date" id="fechaLanzamiento" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Genero</label>
+                                <input type="text" id="genero" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Plataforma</label>
+                                <input type="text" id="plataforma" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Calificación</label>
+                                <input type="text" id="calificacion" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Ruta de la imagen</label>
+                                <input type="text" id="ruta" class="form-control" required>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                            <input type="submit" class="btn btn-success" value="Agregar">
+                            <input type="submit" id="agregar" class="btn btn-success" value="Agregar">
                         </div>
                     </form>
                 </div>
@@ -227,7 +148,7 @@
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                            <input type="submit" class="btn btn-info" value="Guardar">
+                            <input type="submit" id="editar" class="btn btn-info" value="Guardar">
                         </div>
                     </form>
                 </div>
@@ -247,7 +168,7 @@
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                            <input type="submit" class="btn btn-danger" value="Eliminar">
+                            <input type="submit" id="eliminar" class="btn btn-danger" value="Eliminar">
                         </div>
                     </form>
                 </div>
@@ -257,5 +178,8 @@
     <script src="../assets/js/jquery-3.3.1.js"></script>
     <script src="../dist/js/bootstrap.min.js"></script>
     <script src="../dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/man_agregar.js"></script>
+    <script src="../assets/js/man_listar.js"></script>
+    <script src="../assets/js/man_eliminar.js"></script>
 </body>
 </html>
